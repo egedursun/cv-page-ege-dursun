@@ -90,5 +90,51 @@
 
   // Add your javascript here
 
+    // $(document).ready(function() {
+    //
+    //     $('.counter').each(function () {
+    //         $(this).prop('Counter',0).animate({
+    //             Counter: $(this).text()
+    //         }, {
+    //             duration: 4000,
+    //             easing: 'swing',
+    //             step: function (now) {
+    //                 $(this).text(Math.ceil(now));
+    //             }
+    //         });
+    //     });
+    // });
+
+    document.addEventListener("DOMContentLoaded", function() {
+
+        var counters = document.querySelectorAll('.counter');
+
+        counters.forEach(function(counter) {
+            var counterValue = parseInt(counter.textContent);
+            var duration = 5000;
+            var easing = 'swing';
+            var startTime = null;
+
+            function animateCounter(timestamp) {
+                if (!startTime) {
+                    startTime = timestamp;
+                }
+
+                var progress = timestamp - startTime;
+
+                if (progress < duration) {
+                    var value = Math.ceil((progress / duration) * counterValue);
+                    counter.textContent = value;
+                    requestAnimationFrame(animateCounter);
+                } else {
+                    counter.textContent = counterValue;
+                }
+            }
+
+            requestAnimationFrame(animateCounter);
+        });
+    });
+
+
 
 })();
