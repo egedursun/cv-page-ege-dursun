@@ -7,8 +7,14 @@
         <priority>1.0</priority>
     </url>
     <url>
+        <loc>https://www.cv-page.onrender.com/blog</loc>
+        <lastmod>2023-08-20</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
         <loc>https://www.cv-page.onrender.com/basic-cv</loc>
-        <lastmod>2023-08-19</lastmod>
+        <lastmod>2023-08-20</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
